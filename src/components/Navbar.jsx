@@ -47,7 +47,10 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* โลโก้ */}
         <div className="flex items-center">
-          <img className="h-32 w-32 sm:h-24 sm:w-24 lg:h-32 lg:w-32 mr-0" src={logo} alt="Logo" />
+          <img className="h-16 w-16 sm:h-24 sm:w-24 lg:h-32 lg:w-32 mr-0"
+                src={logo}
+                alt="Logo"
+          />
           <span className="text-2xl tracking-tight">GoSafe Website</span>
         </div>
 

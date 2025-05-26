@@ -79,9 +79,7 @@ const ExtinguisherPage = () => {
             การที่สิ่งบางสิ่งจะติดไฟได้นั้น ต้องมีครบองค์ประกอบจากสามเหลี่ยมไฟก่อน ได้แก่ เชื้อเพลิง (Fuel), ความร้อน (Heat), ออกซิเจน (Oxygen)
             และสิ่งที่ช่วยทวีความรุนแรง คือ "ปฏิกิริยาลูกโซ่" หรือ Chain Reaction นั่นเอง 
           </p>
-          <p className="text-justify indent-8 text-lg" style={{ fontFamily: "'Kanit', sans-serif" }}>
-          ไฟมี 5 ประเภท
-          </p>
+          
           <div className='max-h-[1150px] max-w-[1250px] rounded-xl overflow-hidden transform transition-all duration-500 mt-4'>
             <div className='w-full h-full opacity-50 absolute top-0 left-0 hover:opacity-0 transition-all duration-500 md:block sm:hidden'></div>
             <img src={imageFT} alt='ประเภทของไฟ' className='w-full h-full' />
@@ -99,23 +97,45 @@ const ExtinguisherPage = () => {
 
       {/* วิธีใช้ถังดับเพลิง */}
       <SlideInSection from="left">
-      <div className="bg-yellow-100 p-6 rounded-xl shadow-md mt-6 relative sm:h-[700px] lg:h-[1150px] pb-[50px] sm:pb-0">
+  <div className="bg-yellow-100 p-6 rounded-xl shadow-md mt-6 relative sm:h-auto pb-10">
 
-          <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2" style={{ fontFamily: "'Kanit', sans-serif" }}>
-            วิธีการใช้ถังดับเพลิงอย่างถูกต้อง ดึง ปลด กด ส่ายคืออะไร <LuMessageCircleQuestion />
-          </h2>
+    <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2" style={{ fontFamily: "'Kanit', sans-serif" }}>
+      วิธีการใช้ถังดับเพลิงอย่างถูกต้อง ดึง ปลด กด ส่ายคืออะไร <LuMessageCircleQuestion />
+    </h2>
 
-          <div className='max-h-[1150px] max-w-[1250px] rounded-xl overflow-hidden transform transition-all duration-500 mt-4'>
-            <div className='w-full h-full opacity-50 absolute top-0 left-0 hover:opacity-0 transition-all duration-500 md:block sm:hidden'></div>
-            <img src={imageHOW} alt='วิธีใช้ถังดับเพลิง' className='w-full h-full' />
-            <div className="relative h-[500px]">
-            <video controls width="30%" className="absolute top-[-390px] sm:right-16 sm:top-[-420px] lg:right-[100px] lg:top-[-760px] rounded-xl shadow-md">
-              <source src="/videos/PASS.mp4" type="video/mp4" />
-            </video>
-          </div>
-          </div>
-        </div>
-      </SlideInSection>
+    {/* กล่องภาพ + วิดีโอแบบเดสก์ท็อป */}
+    <div className='relative w-full rounded-xl overflow-hidden mt-4'>
+
+      {/* รูปภาพ */}
+      <img src={imageHOW} alt='วิธีใช้ถังดับเพลิง' className='w-full object-cover rounded-xl' />
+
+      {/* วิดีโอแบบ Desktop: ซ้อนบนภาพ */}
+      <div className="relative h-[500px] hidden lg:block">
+        <video
+          controls
+          width="30%"
+          className="absolute top-[-760px] right-[100px] rounded-xl shadow-md"
+        >
+          <source src="/videos/PASS.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    {/* วิดีโอแบบ Mobile: แสดงถัดจากภาพ ด้วย position absolute */}
+<div className="mt-6 relative lg:hidden flex">
+  <video
+    controls
+    className="absolute top-[-300px] right-[40px] rounded-l shadow-sm"
+    style={{ width: '102px', height: '210px' }}
+  >
+    <source src="/videos/PASS.mp4" type="video/mp4" />
+  </video>
+</div>
+
+
+  </div>
+</SlideInSection>
+
     </div>
   );
 };
