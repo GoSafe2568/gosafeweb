@@ -125,8 +125,8 @@ const ExtinguisherPage = () => {
 <div className="mt-6 relative lg:hidden flex">
   <video
     controls
-    className="absolute top-[-300px] right-[40px] rounded-l shadow-sm"
-    style={{ width: '102px', height: '210px' }}
+    className="absolute top-[-250px] right-[40px] rounded-l shadow-sm"
+    style={{ width: '100px', height: '150px' }}
   >
     <source src="/videos/PASS.mp4" type="video/mp4" />
   </video>
